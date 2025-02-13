@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import isolationMode from '../../assets/IsolationMode.png'
-import logoViatech from '../../assets/logoViatech.svg'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { logoViatech } from '../../assets/imageImport';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);

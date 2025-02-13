@@ -2,6 +2,7 @@ import React from 'react'
 
 const ButtonAudioAction = ({title, desc}) => {
   return (
+    <div className='w-screen h-screen'>
     <div className={`w-44 h-28 rounded-xl bg-[#2b5ebd] drop-shadow-xl`}>
       <div className={`w-full h-[102px] rounded-xl bg-[#3776EB] flex flex-col justify-center items-center pt-3 gap-1 text-white`}>
         <h1 className='text-3xl font-bold'>{title}</h1>
