@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ButtonAudioAction = () => {
+const ButtonAudioAction = ({children}) => {
   return (
-    <div>
+    <div className='w-screen h-screen'>
       
     </div>
   )

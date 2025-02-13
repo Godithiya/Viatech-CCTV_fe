@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 import Home from './screen/main/Home';
 
 const App = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   if (!isLogin) {
     return (
