@@ -4,7 +4,7 @@ import { BsCameraVideoOff } from 'react-icons/bs';
 
 const CCTVDisplay = () => {
   return (
-    <div className="size-auto bg-transparent p-6">
+    <div className="size-auto bg-transparent ">
       <div className="flex gap-6">
         {/* Main large video display */}
         <div className="w-2/3 relative">
