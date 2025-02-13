@@ -57,7 +57,11 @@ const TRANSCRIPT = () => {
     </div>
   </div>
   <div className='flex items-center gap-1 flex-1'>
-    <button className='w-full h-[120px] rounded-md text-white text-xl bg-red-500'>HOLD TO TALK</button>
+    <div className='w-full h-[130px] rounded-md text-white text-xl bg-[#d2452f]' >
+      <button className='w-full h-[120px] rounded-md text-white text-xl bg-[#FF391F]'>
+        HOLD TO TALK
+      </button>
+    </div>
   </div>
 </div>
       <div className="w-full  flex-1 flex h-">
@@ -70,7 +74,10 @@ const TRANSCRIPT = () => {
           />
         </div>
         <div className="flex-1 flex flex-col text-[#525252] gap-5">
-          <h1 className="text-base font-semibold">TRANSCRIPT LOG</h1>
+          <span className='flex items-center justify-between' >
+            <h1 className="text-base font-semibold">TRANSCRIPT LOG</h1>
+            <button className='text-sm text-blue-500' >View All</button>
+          </span>
           <div className="space-y-4">
             {dataTranscript.map((val, index) => (
               <div key={index} className="border-b border-[#D5D5D5] pb-5 flex text-xs">
