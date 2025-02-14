@@ -13,18 +13,33 @@ const Header = () => {
     setTimeout(() => setSpin(false), 500);
   };
 
+  const ThermalCondition = [
+    { title: 'Amplifier', subTitle: 'TRUE' },
+    { title: 'Modem', subTitle: 'ON' },
+    { title: 'Suhu', subTitle: '39°C' },
+    { title: 'Suhu Max', subTitle: '40°C' },
+    { title: 'Suhu Min', subTitle: '38°C' }
+  ];
+  
+
   return (
     <div className="w-full select-none flex items-center text-xs justify-between px-16 h-full">
-      <img src={logoViatech} alt="Logo Viatech" />
+      <img src={logoViatech} className="w-[200px]" alt="Logo Viatech" />
       <div className="flex items-center gap-20">
         <div className="flex items-center text-white gap-5">
-          <div className="flex gap-5 mr-6">
-            <div>
-              <h1 className="text-xs text-[#7B7B7B]">Data Status</h1>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 block rounded-full bg-green-500" />
-                <h1 className="text-base">Online</h1>
-              </div>
+          <div className="flex gap-10 mr-6">
+            <div className="flex w-[400px] justify-between items-center" >
+              {
+                ThermalCondition.map((val) => (
+                  <div key={val.subTitle} >
+                    <h1 className="text-xs text-[#7B7B7B]">{val.title}</h1>
+                    <div className="flex items-center gap-3">
+                      {/* <span className="w-2 h-2 block rounded-full bg-green-500" /> */}
+                      <h1 className="text-base">{val.subTitle}</h1>
+                    </div>
+                  </div>
+                ))
+              }
             </div>
             <button
               onClick={handleAnimateSpin}
@@ -61,7 +76,6 @@ const Header = () => {
             </span>
           </div>
           <AiOutlineDown />
-          {/* Dropdown Menu */}
           <div
             className={`w-full h-10 bg-red-500 z-50 rounded-md absolute -bottom-12 transition-all duration-300 ${
               profileMenu ? "opacity-100" : "opacity-0"
