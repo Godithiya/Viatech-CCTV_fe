@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ButtonAudioAction from './ButtonAudioAction';
+import { AiFillAudio, AiOutlineAudio } from 'react-icons/ai';
 
 const TRANSCRIPT = () => {
+  const [activeButton, setActiveButton] = useState(false)
+  const [activeButtonComponent, setActiveButtonComponent] = useState(false)
+
   const dataButtonAudioAction = [
     {
       title : 'P1',
@@ -41,6 +45,11 @@ const TRANSCRIPT = () => {
     },
   ];
 
+  const handleButtonActive = () => {
+    setActiveButton((val) => val = !val)
+    setActiveButtonComponent((val) => val = !val)
+  }
+
   return (
     <div className='w-full  flex flex-col'>
 <div className='flex h-[200px] gap-3 flex-1'>
@@ -51,13 +60,27 @@ const TRANSCRIPT = () => {
       <span className='w-full bg-[#D5D5D5] h-[1px] block' />
     </div>
     <div className='flex gap-5 p-5 flex-wrap justify-center w-full'>
-      {dataButtonAudioAction.map((val) => (
-        <ButtonAudioAction key={val.title} desc={val.dec} title={val.title}/>
+      {dataButtonAudioAction.map((val, index) => (
+        <ButtonAudioAction 
+        onClick={() => setActiveButtonComponent(activeButtonComponent === val.title ? null : val.title)} 
+        active={activeButtonComponent} 
+        key={val.title} 
+        desc={val.dec} 
+        title={val.title}
+      />      
       ))}
     </div>
   </div>
   <div className='flex items-center gap-1 flex-1'>
-    <button className='w-full h-[120px] rounded-md text-white text-xl bg-red-500'>HOLD TO TALK</button>
+  <div  onClick={handleButtonActive} className={`w-full select-none transition-all duration-200 h-[130px] rounded-md text-white text-xl  ${activeButton ? 'scale-95 drop-shadow-2xl' : 'bg-[#d2452f] drop-shadow-xl'} `}>
+  <span className={`w-full flex justify-center flex-col gap-2 items-center h-[120px] rounded-md text-white text-xl bg-[#FF391F]  transition-all duration-200`}>
+    {
+      activeButton ?  <AiFillAudio size={35} /> : <AiOutlineAudio size={35} /> 
+    }
+    HOLD TO TALK
+  </span>
+</div>
+
   </div>
 </div>
       <div className="w-full  flex-1 flex h-">
@@ -70,7 +93,10 @@ const TRANSCRIPT = () => {
           />
         </div>
         <div className="flex-1 flex flex-col text-[#525252] gap-5">
-          <h1 className="text-base font-semibold">TRANSCRIPT LOG</h1>
+          <span className='flex items-center justify-between' >
+            <h1 className="text-base font-semibold">TRANSCRIPT LOG</h1>
+            <button className='text-sm text-blue-500' >View All</button>
+          </span>
           <div className="space-y-4">
             {dataTranscript.map((val, index) => (
               <div key={index} className="border-b border-[#D5D5D5] pb-5 flex text-xs">

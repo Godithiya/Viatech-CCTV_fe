@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full flex items-center text-xs justify-between px-16 h-full">
+    <div className="w-full select-none flex items-center text-xs justify-between px-16 h-full">
       <img src={logoViatech} alt="Logo Viatech" />
       <div className="flex items-center gap-20">
         <div className="flex items-center text-white gap-5">
@@ -63,7 +63,7 @@ const Header = () => {
           <AiOutlineDown />
           {/* Dropdown Menu */}
           <div
-            className={`w-full h-10 bg-red-500 absolute -bottom-12 transition-all duration-300 ${
+            className={`w-full h-10 bg-red-500 z-50 rounded-md absolute -bottom-12 transition-all duration-300 ${
               profileMenu ? "opacity-100" : "opacity-0"
             }`}
           ></div>
