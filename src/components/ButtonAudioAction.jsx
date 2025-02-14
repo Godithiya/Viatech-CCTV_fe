@@ -5,7 +5,7 @@ const ButtonAudioAction = ({ title, desc, active, onClick }) => {
     <div
       onClick={onClick}
       className={`min-w-[140px] max-w-[176px] flex-1 select-none h-28 rounded-xl transition-all duration-200 cursor-pointer 
-        ${active === title ? ' drop-shadow-2xl scale-95' : 'bg-[#2b5ebd] drop-shadow-xl'}
+        ${active  ? ' drop-shadow-2xl scale-95' : 'bg-[#2b5ebd] drop-shadow-xl'}
       `}
     > 
       <div className="w-full h-[102px] rounded-xl bg-[#3776EB] flex flex-col justify-center items-center pt-3 gap-1 text-white">
