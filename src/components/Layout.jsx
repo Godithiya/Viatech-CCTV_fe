@@ -9,7 +9,7 @@ const Layout = () => {
       <div className='w-full h-20  bg-[#191919]'>
         <Header/>
       </div>
-      <div className="w-screen h-full flex flex-1 flex-col  px-28 py-5">
+      <div className="w-screen h-full flex flex-1 flex-col   px-28 py-5">
         <Outlet/>
       </div>
     </div>

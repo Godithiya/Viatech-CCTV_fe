@@ -77,8 +77,8 @@ const TRANSCRIPT = () => {
   };
 
   return (
-    <div className='w-full flex flex-col'>
-      <div className='flex h-[200px] gap-3 flex-1'>
+    <div className='w-full flex overflow-hidden flex-col gap-5 '>
+      <div className='flex h-[200px] gap-3 border-b pb-3 border-[#e2dfdf] flex-1'>
         <div className='flex items-center flex-col flex-1'>
           <div className='w-full flex items-center gap-2'>
             <span className='w-full bg-[#D5D5D5] h-[1px] block' />
@@ -98,7 +98,7 @@ const TRANSCRIPT = () => {
           </div>
         </div>
         
-        <div className='flex items-center gap-1 flex-1'>
+        <div className='flex items-center  gap-1 flex-1'>
           <div 
             onClick={handleTalkButton}
             className={`w-full select-none transition-all duration-200 h-[130px] rounded-md text-white text-xl 
